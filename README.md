@@ -3,6 +3,20 @@ Bienvenue sur le dépôt du TP Sudoku.....
 ## Présentation des solvers
 
 Listez ici la documentation qui accompagne vos solvers.
+Nous avons utilisé la méthode d'exploration récursive avec backtracking pour déterminer la solution de manière "incrémentielle" de sorte à continuer tant que la solution est plausible, et de s'arrêter et rebrousser chemin une fois que les solutions deviennent impossible.
+
+Voici en détail les étapes de résolution de cet algorithme :
+
+1 - Trouver les cellules qui sont vides dans les grilles (évidemment si toutes les cellules sont pleines, le Sudoku est terminé)
+
+2 - On essaye d'inclure progressivement les chiffres allant de 1 jusqu'à 9
+
+3 - On vérifie si le chiffre ajouté dans la cellule vide est valide (donc il n'apparaît pas dans la même colonne ou la même ligne)
+
+4 - Si c'est validé, on continue avec la cellule vide suivante et on recommence. En revanche si c'est invalide, on effectue justement un backtracing pour revenir sur nos pas, et essayer avec un autre chiffre.
+
+Cette méthode s'apparente à une méthode de force brute selon nous, et par conséquent elle n'est pas optimale car elle peut rapidement devenir très lente lorsqu'elle fait face à des grilles plus difficiles (plus longues ou plus complexes).
+
 
 ### [Solvers LinqToZ3](Sudoku.LinqToZ3/README.md)
 
