@@ -1,14 +1,14 @@
 from timeit import default_timer
 
-#instance = ((0,0,0,0,9,4,0,3,0),
-#           (0,0,0,5,1,0,0,0,7),
-#           (0,8,9,0,0,0,0,4,0),
-#           (0,0,0,0,0,0,2,0,8),
-#           (0,6,0,2,0,1,0,5,0),
-#           (1,0,2,0,0,0,0,0,0),
-#           (0,7,0,0,0,0,5,2,0),
-#           (9,0,0,0,6,5,0,0,0),
-#           (0,4,0,9,7,0,0,0,0))
+instance = ((0,0,0,0,9,4,0,3,0),
+           (0,0,0,5,1,0,0,0,7),
+           (0,8,9,0,0,0,0,4,0),
+           (0,0,0,0,0,0,2,0,8),
+           (0,6,0,2,0,1,0,5,0),
+           (1,0,2,0,0,0,0,0,0),
+           (0,7,0,0,0,0,5,2,0),
+           (9,0,0,0,6,5,0,0,0),
+           (0,4,0,9,7,0,0,0,0))
 
 def findNextCellToFill(grid, i, j):
         for x in range(i,9):
@@ -48,12 +48,18 @@ def solveSudoku(grid, i=0, j=0):
                         grid[i][j] = 0
         return False
 
-#start = default_timer()
-if(solveSudoku(instance)):
-	#print_grid(instance)
-	r=instance
-else:
-	print ("Aucune solution trouv�e")
 
-#execution = default_timer() - start
-#print("Le temps de r�solution est de : ", execution, " seconds as a floating point value")
+grid_list = [list(row) for row in instance]
+
+start = default_timer()
+
+if(solveSudoku(grid_list)):
+	for row in grid_list:
+                print(row)
+        r=grid_list
+else:
+        print("Aucune solution trouvée.")
+
+
+execution = default_timer() - start
+print("Le temps de resolution est de : ", execution, " seconds as a floating point value")
