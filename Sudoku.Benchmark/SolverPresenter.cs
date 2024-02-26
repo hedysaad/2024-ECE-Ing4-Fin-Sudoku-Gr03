@@ -5,6 +5,14 @@ using Sudoku.Shared;
 
 namespace Sudoku.Benchmark
 {
+    /* public class BacktrackingSolver : ISudokuSolver
+    {
+        public SudokuGrid Solve(SudokuGrid s)
+        {
+
+        }
+
+    } */
     public class SolverPresenter
     {
 
@@ -45,6 +53,7 @@ namespace Sudoku.Benchmark
                 throw ae.InnerExceptions[0];
             }
         }
+        
 
     }
 }
